@@ -1,0 +1,35 @@
+<section class="mt-5 pt-5">
+    <div class="container-fluid">
+        <div class="table-responsive container-fluid">
+            <h3 class="text-center mb-3">Users</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of usersArray | paginate: { itemsPerPage:10,currentPage:p};; let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{data.first_name}}</td>
+                        <td>{{data.last_name}}</td>
+                        <td>{{data.email}}</td>
+                        <td><i class="fa fa-edit pl-2 text-success" aria-hidden="true" (click)="edit(i)"></i>
+                            <i class="fa fa-eye pl-2 text-warning" aria-hidden="true" (click)="view(i)"></i>
+                            <i class="fa fa-trash pl-2 text-danger" aria-hidden="true" (click)="delete(i)"></i></td>
+                        <!-- *ngFor="let currency of data.currencies" -->
+                        <!-- *ngFor="let language of data.languages" -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="mx-auto mt-2 float-right">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</section>

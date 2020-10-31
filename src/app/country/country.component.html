@@ -1,0 +1,33 @@
+<section class="mt-5 pt-5">
+    <div class="table-responsive container-fluid">
+        <h3 class="text-center mb-3">Country</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Capital</th>
+                    <th>Currency names</th>
+                    <th>Language names</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of countryArray | paginate: { itemsPerPage:10,currentPage:p};; let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{data.cioc}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.capital}}</td>
+                    <td>{{data.currencies[0].name}}</td>
+                    <td>{{data.languages[0].name}}</td>
+                    <td><i class="fa fa-eye" aria-hidden="true" (click)="view(i)"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mx-auto mt-2 float-right">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</section>

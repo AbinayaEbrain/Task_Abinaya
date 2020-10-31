@@ -1,0 +1,29 @@
+<section class="mt-5 pt-5">
+    <div class="container">
+        <h3 class="text-center mb-3">View Users</h3>
+        <form>
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" name="first_name" [(ngModel)]="userObj.first_name"
+                    #first_name="ngModel" placeholder="First Name" disabled>
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" name="last_name" [(ngModel)]="userObj.last_name"
+                    #last_name="ngModel" placeholder="Last Name" disabled>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" name="email" [(ngModel)]="userObj.email" #email="ngModel"
+                    placeholder="Email" disabled>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="userObj.password"
+                    #password="ngModel" placeholder="Password" disabled>
+            </div>
+            <button type="button" class="btn btn-secondary float-right" [routerLink]="['/users']">Cancel</button>
+        </form>
+    </div>
+
+</section>

@@ -1,0 +1,98 @@
+<section class="mt-5 pt-5">
+    <div class="container">
+        <h3 class="text-center mb-3">View Country</h3>
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-primary">Name</label>
+                        <input type="text" class="form-control" name="first_name" [(ngModel)]="countryObj.name"
+                            #first_name="ngModel" placeholder="Name">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-primary">Capital</label>
+                        <input type="text" class="form-control" name="last_name" [(ngModel)]="countryObj.capital"
+                            #last_name="ngModel" placeholder="Capital">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-primary">Currencies</label>
+                        <br>
+                        <span *ngFor="let data of countryObj.currencies">
+                            <span class="ml-3">{{data.name}}</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-primary">Languages</label>
+                        <br>
+                        <span *ngFor="let data of countryObj.languages">
+                            <span class="ml-3">{{data.name}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-primary">Region</label>
+                        <input type="text" class="form-control" name="region" [(ngModel)]="countryObj.region"
+                            #region="ngModel" placeholder="Region">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-primary">Sub Region</label>
+                        <input type="text" class="form-control" name="subregion" [(ngModel)]="countryObj.subregion"
+                            #subregion="ngModel" placeholder="Sub Region">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-primary">Flag Symbol</label>
+                        <br>
+                        <img src="{{countryObj.flag}}" width="50" height="50">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-primary">Area</label>
+                        <input type="text" class="form-control" name="area" [(ngModel)]="countryObj.area"
+                            #area="ngModel" placeholder="Area">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-primary">Borders</label>
+                        <br>
+                        <span *ngFor="let data of countryObj.borders">
+                            <span class="ml-3">{{data}}</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="text-primary">Timezones</label>
+                        <br>
+                        <span *ngFor="let data of countryObj.timezones">
+                            <span class="ml-3">{{data}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <button type="button" class="btn btn-secondary float-right" [routerLink]="['/country']">Cancel</button>
+        </form>
+    </div>
+
+</section>
