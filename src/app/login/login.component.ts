@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
     if (registeredUser && registeredUser.length > 0) {
       this.userArray = registeredUser;
     }
-    console.log(Object.keys(this.userObj))
     if (Object.keys(this.userObj).length > 0) {
       this.userArray.push({
         email: this.userObj.email,
@@ -54,7 +53,6 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/country']);
       this.invalidUser = '';
     } else {
-      console.log('26373254')
       this.invalidUser = 'Invalid Login';
     }
   }

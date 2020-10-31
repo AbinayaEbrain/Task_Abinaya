@@ -16,7 +16,6 @@ export class ViewUserComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.usersArray = JSON.parse(localStorage.getItem('userArray'));
-    console.log(this.usersArray);
     this.foundObj = this.usersArray.filter((ele, i) => i === Number(this.id));
     this.userObj = this.foundObj[0];
   }
